@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title> {{head}} </title>
+    </header>
+    <body>
+
+        <style>
+            div{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+        </style>
+        {% for x in bunner %}
+        <div>
+            <h1> {{x.title}} </h1>
+            <p> {{x.description}} </p>
+            <img src="{{x.image.url}}" width="150px" height="150px" alt="IO">
+        </div>
+        {% endfor %}
+    </body> 
+
+<script>
+    function showTime() {
+        const currentTime = new Date().toLocaleString("en-US", { timeZoneName: "short" });
+        document.getElementById('currentTime').innerHTML = currentTime;
+    }
+    
+    showTime();
+    setInterval(function () {
+        showTime();
+    }, 1000);
+    
+</script>
+
+</html>
